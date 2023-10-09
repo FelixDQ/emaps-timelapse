@@ -11,6 +11,8 @@
   "repository": {},
   "license": "UNLICENSED",
   "dependencies": {
+    "@nivo/core": "^0.83.0",
+    "@nivo/line": "^0.83.0",
     "@remotion/cli": "4.0.45",
     "@remotion/zod-types": "4.0.45",
     "@turf/helpers": "^6.5.0",

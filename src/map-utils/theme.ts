@@ -2,8 +2,8 @@ import {MapTheme} from './types';
 
 export const theme: MapTheme = {
 	co2Scale: {
-		steps: [0, 75, 150, 600, 800, 1100, 1500],
-		colors: ['#D4D9DE','#2AA364', '#F5EB4D', '#9E4229', '#381D02', '#381D02', '#000'],
+		steps: [0, 150, 600, 800, 1100, 1500],
+		colors: ['#2AA364', '#F5EB4D', '#9E4229', '#381D02', '#381D02', '#000'],
 	},
 	oceanColor: '#FAFAFA',
 	strokeWidth: 2.5,
