@@ -50,14 +50,13 @@ export const Scene1: React.FC<z.infer<typeof scene1Schema>> = ({ startLat, start
 		}))
 	})
 	);
-	console.log(chartData);
 
 
 	const mapTranslationProgress
 		= spring({
-			frame: frame,
+			frame,
 			fps,
-			durationInFrames: durationInFrames,
+			durationInFrames,
 			config: {
 				damping: 300,
 			},
@@ -72,7 +71,6 @@ export const Scene1: React.FC<z.infer<typeof scene1Schema>> = ({ startLat, start
 	const co2Scale = getCo2ColorScale(theme);
 
 	const geometries = useMemo(generateTopos, []);
-
 	const map = mapReference.current?.getMap();
 	for (const feature of geometries.features) {
 		if (!map) {
@@ -123,6 +121,7 @@ export const Scene1: React.FC<z.infer<typeof scene1Schema>> = ({ startLat, start
 					zIndex: 9999,
 				}}>
 					<ResponsiveLine
+						useMesh
 						data={chartData}
 						xScale={{
 							type: 'time',
@@ -148,7 +147,6 @@ export const Scene1: React.FC<z.infer<typeof scene1Schema>> = ({ startLat, start
 							tickValues: 'every 20 days',
 						}}
 						enablePointLabel={false}
-						useMesh={true}
 						enableSlices={false}
 						enablePoints={false}
 						margin={{ top: 20, right: 110, bottom: 50, left: 60 }}
